@@ -1,15 +1,13 @@
-# SyntaxTerror
+# Syntax Terror
 
-## Our Mission
-#### TBA
-## Our Vision
-#### TBA
+## Mission
+TBA
 
-## Meet Our Team
+## Vision
+TBA
 
-| Member |
-|--------|
-|Mohamed Mehany|
-|Ahmed Mokhtar|
-|Sherif Ahmed|
-|Mark Morcos|
+## Team
+* Mohamed Mehany
+* Ahmed Mokhtar
+* Sherif Ahmed
+* Mark Morcos
