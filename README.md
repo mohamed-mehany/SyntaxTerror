@@ -10,8 +10,6 @@
 | Member |
 |--------|
 |Mohamed Mehany|
-
-| Member |
-|--------|
+|---------------|
 |Sherif Ahmed|
 
