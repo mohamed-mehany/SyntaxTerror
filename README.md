@@ -12,5 +12,4 @@ Software engineering was always meant to ease a person's life and we are looking
 * Sherif Ahmed
 * Mark Morcos
 * Ebram Sherif 
-* Omar Sharkawy
 * Nariman Hesham
