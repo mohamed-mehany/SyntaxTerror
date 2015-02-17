@@ -1,6 +1,5 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "home";
 
 .clear { clear: both; }
 textarea.form-control, select.form-control[multiple] { height: 400px; }
