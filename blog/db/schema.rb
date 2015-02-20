@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150217132726) do
+ActiveRecord::Schema.define(version: 20150220201239) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "categoriesposts", force: :cascade do |t|
+    t.integer  "category_id"
+    t.integer  "post_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"
@@ -37,6 +50,7 @@ ActiveRecord::Schema.define(version: 20150217132726) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.boolean  "auth"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

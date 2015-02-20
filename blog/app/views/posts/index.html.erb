@@ -7,7 +7,7 @@
                     Blog
                     <small>A blog for Syntax Terror</small>
                 </h1>
-<% Post.all.each do |post| %>
+<% @posts.each do |post| %>
                 <!-- First Blog Post -->
                 <h2>
                     <%= link_to post.title, post %>
@@ -15,12 +15,16 @@
                 <p class="lead">
                     by <%= link_to User.find(post.user_id).name, User.find(post.user_id) %>
                 </p>
+                <p>Categories: <%= raw post.categories.map(&:name).map { |t| link_to t, category_path(t) }.join(', ') %></p>
                 <p><span class="glyphicon glyphicon-time"></span> Posted on <%= post.created_at.strftime("%B %e, %Y at %l:%M %p") %></p>
                 <hr>
                 <img class="img-responsive" src="http://placehold.it/900x300" alt="">
                 <hr>
                 <p><%= Nokogiri::HTML.parse(post.content).css('p').first.text %></p>
                 <%= link_to 'Read More <span class="glyphicon glyphicon-chevron-right"></span>'.html_safe, post, class: 'btn btn-primary' %>
+
+
+
 
                 <hr>
 <% end %>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'categories/:category', to: 'posts#index', as: :category
   resources :posts
   devise_for :users
   resources :users

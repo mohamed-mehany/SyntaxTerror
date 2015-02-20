@@ -6,13 +6,13 @@
                 <!-- Blog Post -->
 
                 <!-- Title -->
-                <h1><%= Post.find(params[:id]).title %></h1>
+                <h1><%= @post.title %></h1>
 
                 <!-- Author -->
                 <p class="lead">
                     by <a href="#"><%= link_to User.find(Post.find(params[:id]).user_id).name, User.find(Post.find(params[:id]).user_id) %></a>
                 </p>
-
+                <p>Categories: <%= raw @post.categories.map(&:name).map { |t| link_to t, category_path(t) }.join(', ') %></p>
                 <hr>
 
                 <!-- Date/Time -->
@@ -26,7 +26,7 @@
                 <hr>
 
                 <!-- Post Content -->
-                <%= Post.find(params[:id]).content.html_safe %>
+                <%= @post.content.html_safe %>
 
                 <hr>
 
