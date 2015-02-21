@@ -2,9 +2,9 @@ Rails.application.routes.draw do
   resources :posts do
     resources :comments
   end
-  
-  devise_for :users
-  resources :users
+
+  #devise_for :users
+  #resources :users
   get 'categories/:category', to: 'posts#index', as: :category
   get 'categories/:category/page/:page' => 'posts#index'
 
@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   end
 
   root 'posts#index'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
