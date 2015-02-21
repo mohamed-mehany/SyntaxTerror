@@ -23,13 +23,17 @@ class UsersController < ApplicationController
     end
   end
   def set_auth
-    @user = User.find(params[:id])
-    @user.auth = true
-    @user.save
-    redirect_to users_path()
+    if (current_user && current_user.admin)
+      @user = User.find(params[:id])
+      @user.auth = true
+      @user.save
+      redirect_to users_path()
+    else
+      redirect_to root_path(), notice: "You are not allowed to authenticate."
+    end
   end
   private
     def user_params
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
-  end
+    end
 end
