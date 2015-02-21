@@ -7,8 +7,8 @@ class Post < ActiveRecord::Base
   validates :title, presence: true
   validates :content, length: { minimum: 100 }
 
-  def self.cat_with(id)
-    Category.find(id).posts
+  def self.cat_with(name)
+    Category.find_by_name!(name).posts
   end
 
   def self.cat_counts

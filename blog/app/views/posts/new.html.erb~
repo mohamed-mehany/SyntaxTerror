@@ -1,4 +1,0 @@
-<div id="page_wrapper">
-<h1><%= @post.new_record? ? "New" : "Edit" %> Post</h1>
-<%= render 'form' %>
-</div>
