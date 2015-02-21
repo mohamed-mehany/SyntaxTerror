@@ -5,7 +5,12 @@ Rails.application.routes.draw do
     get 'page/:page', action: :index, on: :collection
   end
   devise_for :users, controllers: { registrations: 'registrations' }
-  resources :users
+  resources :users do
+    member do
+      post :set_auth
+    end
+  end
+
   root 'posts#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

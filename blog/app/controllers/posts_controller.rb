@@ -14,13 +14,19 @@ class PostsController < ApplicationController
     @post = Post.new
   end
   def create
-    @post = Post.new(post_params)
-    @post.user = current_user
-    if @post.save
-      redirect_to @post, notice: "Post created successfully"
+    if(current_user && current_user.auth)
+      @post = Post.new(post_params)
+      @post.user = current_user
+
+      if @post.save
+        redirect_to @post, notice: "Post created successfully"
+      else
+        render 'new'
+      end
     else
-      render 'new'
+      redirect_to root_path(), notice: "You are not allowed to post."
     end
+
   end
   def edit
     @post = Post.find(params[:id])
