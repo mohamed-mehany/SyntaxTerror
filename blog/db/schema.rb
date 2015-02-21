@@ -17,24 +17,39 @@ ActiveRecord::Schema.define(version: 20150220234436) do
     t.string   "commenter"
     t.text     "body"
     t.integer  "post_id"
+
+ActiveRecord::Schema.define(version: 20150220201239) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   add_index "comments", ["post_id"], name: "index_comments_on_post_id"
 
+  create_table "categoriesposts", force: :cascade do |t|
+    t.integer  "category_id"
+    t.integer  "post_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "posts", force: :cascade do |t|
-    t.string   "title"
     t.integer  "user_id"
+    t.string   "title"
     t.string   "image"
     t.string   "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  add_index "posts", ["user_id"], name: "index_posts_on_user_id"
+
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.boolean  "admin",                  default: false
+    t.boolean  "auth",                   default: false
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
     t.string   "email",                  default: "",    null: false

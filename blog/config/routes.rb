@@ -2,8 +2,23 @@ Rails.application.routes.draw do
   resources :posts do
     resources :comments
   end
+  
   devise_for :users
   resources :users
+  get 'categories/:category', to: 'posts#index', as: :category
+  get 'categories/:category/page/:page' => 'posts#index'
+
+  resources :posts do
+    get 'page/:page', action: :index, on: :collection
+  end
+
+  devise_for :users, controllers: { registrations: 'registrations' }
+  resources :users do
+    member do
+      post :set_auth
+    end
+  end
+
   root 'posts#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

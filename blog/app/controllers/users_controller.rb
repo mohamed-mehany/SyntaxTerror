@@ -1,8 +1,13 @@
 class UsersController < ApplicationController
   def index
-	@users = User.all
+    if current_user.try(:admin)
+	   @users = User.all
+   elsif current_user
+     redirect_to current_user
+   else
+     redirect_to root_path()
+   end
   end
-
   def show
     @user = User.find(params[:id])
   end
@@ -16,6 +21,12 @@ class UsersController < ApplicationController
     else
       render 'new'
     end
+  end
+  def set_auth
+    @user = User.find(params[:id])
+    @user.auth = true
+    @user.save
+    redirect_to users_path()
   end
   private
     def user_params
