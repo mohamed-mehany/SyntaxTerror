@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get 'categories/:category', to: 'posts#index', as: :category
-  get 'categories/:category/page/:page' => 'posts#index'
+  get 'categories/:id', to: 'posts#index', as: :category
+  get 'categories/:id/page/:page' => 'posts#index'
   resources :posts do
     get 'page/:page', action: :index, on: :collection
   end

@@ -6,7 +6,7 @@
                 <!-- Blog Post -->
 
                 <!-- Title -->
-                <h1><%= @post.title %> <%= link_to "Edit", edit_post_path, class: "btn btn-primary" %></h1>
+                <h1><%= @post.title %></h1> <%= link_to "Edit", edit_post_path, class: "btn btn-primary" %>
 
                 <!-- Author -->
                 <p class="lead">

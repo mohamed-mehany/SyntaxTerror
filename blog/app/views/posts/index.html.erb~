@@ -29,6 +29,9 @@
                 <!-- Pager -->
                 <ul class="pager">
 						<%= paginate @posts %>
+                    <li class="next">
+                        <a href="#">Next &rarr;</a>
+                    </li>
                 </ul>
             </div>
 

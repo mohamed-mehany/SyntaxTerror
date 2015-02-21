@@ -3,7 +3,7 @@ class Category < ActiveRecord::Base
   has_many :categoriesposts
   has_many :posts, through: :categoriesposts
 
-  validates :name, presence: true, uniqueness: true
+  validates :name, uniqueness: true
   def to_s
     name
   end

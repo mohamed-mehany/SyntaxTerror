@@ -1,23 +1,23 @@
 <%= form_for @post do |f| %>
-  <% if @post.errors.any? %>
-  <div id="errors">
-  <h2><%= pluralize(@post.errors.count, "error") %> prevented this post from saving:</h2>
-  <ul>
-  <% @post.errors.full_messages.each do |msg| %>
-  <li><%= msg %></li>
-  <% end %>
-  </ul>
-  </div>
-  <% end %>
-  <%= f.label :title %><br>
-  <%= f.text_field :title %><br>
-  <br>
-  <%= f.label :content %><br>
-  <%= f.text_area :content%><br>
-  <br>
-  <br>
-  <%= f.label :cat_list, "Categories (separated by commas)" %><br>
-  <%= f.text_field :cat_list %><br>
-  <br>
-  <%= f.submit %>
+	<% if @post.errors.any? %>
+		<div id="error_explanation">
+			<h2><%= pluralize(@post.errors.count, "error") %> prevented this post from saving:</h2>
+			<ul>
+				<% @post.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+	<div class="form-group">
+		<%= f.label :title %>
+		<%= f.text_field :title, class: "form-control" %>
+	</div>
+	<div class="form-group">
+		<%= f.label :content %>
+		<%= f.text_area :content, as: :wysihtml5, class: "wysihtml5 form-control" %>
+	</div>
+	<div class="form-group">
+		<%= f.submit class: "btn btn-" + (@post.new_record? ? "success" : "primary") %>
+	</div>
 <% end %>
