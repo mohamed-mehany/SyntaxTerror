@@ -2,18 +2,22 @@
 <h1>Sign up</h1>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@users) do |u| %>
+    <%= form_for(@user  ) do |u| %>
       <%= u.label :name%>
       <%= u.text_field :name %>
+      <br>
 
       <%= u.label :email%>
       <%= u.email_field :email %>
+      <br>
 
       <%= u.label :password%>
       <%= u.password_field :password%>
+      <br>
 
       <%= u.label :password_confirmation, "Confirmation"%>
       <%= u.password_field :password_confirmation%>
+      <br>
 
       <%= u.submit "Create my account", class: "btn btn-primary" %>
     <% end %>
