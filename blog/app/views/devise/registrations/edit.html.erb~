@@ -34,8 +34,8 @@
   </div>
 
   <div class="form-group">
-  <%= f.label :image, "A link to your profile picture" %>
-  <%= f.text_field :image, class: "form-control" %>
+  <%= f.label :image, "A link to your profile picture" %><br />
+  <%= f.text_field :image %>
   </div>
 
   <div class="form-group">

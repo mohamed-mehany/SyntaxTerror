@@ -1,9 +1,9 @@
-<div class="well">
+<div class="well" style="width:50%; margin-left:auto; margin-right:auto">
 <h2>Sign in</h2>
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-group">
     <%= f.label :email %><br />
-    <%= f.email_field :email, class: "form-control" %>
+    <%= f.email_field :email, autofocus: true, class: "form-control" %>
   </div>
 
   <div class="form-group">

@@ -22,7 +22,7 @@
                         <div class="col-xs-12">
                             <ul class="list-unstyled">
                               <% @categories.each do |category| %>
-                                <li><%= link_to category, category %></li>
+                                <li><%= link_to category, category_path(category.name) %></li>
                               <% end %>
                             </ul>
                         </div>

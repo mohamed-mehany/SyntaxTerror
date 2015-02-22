@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
 			if @comment.save
 				redirect_to @post, notice: "Comment created successfully"
 			else
-            redirect_to @post, alert: @comment.errors.full_messages.join(". ")
+            redirect_to @post, { alert: @comment.errors.full_messages.join(". "), params[:comment][:body] => @comment.body }
 			end
 		else
 			redirect_to posts_path(), notice: "You are not allowed to comment."

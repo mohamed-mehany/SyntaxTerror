@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_filter :authenticate_user!, only: [:new, :create, :edit, :update]
   def index
     if params[:category]
-      @posts = Post.cat_with(params[:category]).order('created_at DESC').page params[:page]
+      @posts = Post.cat_with(params[:category]).page params[:page]
     else
       @posts = Post.order('created_at DESC').page params[:page]
     end
