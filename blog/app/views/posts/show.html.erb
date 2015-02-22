@@ -23,12 +23,12 @@
                 <hr>
 
                 <!-- Post Content -->
-                <%= @post.content.html_safe %>
+                <%= @post.content_html %>
 
                 <hr>
 
                 <!-- Post Sharing -->
-                <b> Share: </b> 
+                <b> Share: </b>
                 <%= social_share_button_tag("My Site") %>
 
                 <hr>
