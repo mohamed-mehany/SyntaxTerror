@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_filter :authenticate_user!, except: [:index]
 	def new
 		@comment = Comment.new
 	end
@@ -11,7 +12,7 @@ class CommentsController < ApplicationController
 			if @comment.save
 				redirect_to @post, notice: "Comment created successfully"
 			else
-            redirect_to @post, { alert: @comment.errors.full_messages.join(". "), params[:comment][:body] => @comment.body }
+            redirect_to @post, alert: @comment.errors.full_messages.join(". ")
 			end
 		else
 			redirect_to posts_path(), notice: "You are not allowed to comment."
