@@ -4,6 +4,7 @@ gem 'bootstrap-sass'
 gem 'bootstrap-wysihtml5-rails'
 gem 'devise'
 gem 'kaminari'
+gem 'social-share-button', '~> 0.1.6'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'

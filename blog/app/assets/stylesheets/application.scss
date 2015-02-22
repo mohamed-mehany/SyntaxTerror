@@ -1,3 +1,9 @@
+/*
+ *= require_tree .
+ *= require social-share-button
+ *= require_self
+ */
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "bootstrap-wysihtml5";
@@ -16,3 +22,6 @@ footer {
 #error_explanation ul { @extend .alert; @extend .alert-danger; padding-left: 25px; }
 
 .field_with_errors { display: inline; }
+
+
+
