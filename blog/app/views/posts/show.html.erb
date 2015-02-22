@@ -48,8 +48,6 @@
                         <div class="form-group">
                             <%= f.text_area :body %>
                             <br>
-                            <b>By:</b> <br> <%= f.text_field :commenter %>
-                            <!-- <textarea class="form-control" rows="3"></textarea> -->
                         </div>
                         <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
                         <%= f.submit "Comment", class: "btn btn-primary"%>
@@ -71,12 +69,12 @@
                     </a>
                     <div class="media-body">
                         <h4 class="media-heading">
-                            <%= comment.commenter %>
-                            <small><%= comment.created_at.strftime("%B %e, %Y at %l:%M %p") %></small>
+                            <%= link_to comment.user, comment.user %>
+                            <small><%= comment.try(:created_at).try(:strftime, "%B %e, %Y at %l:%M %p") %></small>
                         </h4>
                         <%= comment.body %>
                     </div>
-                </div>       
+                </div>
                 <% end %>
 
 

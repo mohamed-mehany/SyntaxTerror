@@ -4,8 +4,6 @@ Rails.application.routes.draw do
     get 'page/:page', action: :index, on: :collection
   end
 
-  #devise_for :users
-  #resources :users
   get 'categories/:category', to: 'posts#index', as: :category
   get 'categories/:category/page/:page' => 'posts#index'
 

@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20150220234436) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "commenter"
+    t.integer  "user_id"
     t.text     "body"
     t.integer  "post_id"
     t.datetime "created_at", null: false
@@ -35,6 +36,8 @@ ActiveRecord::Schema.define(version: 20150220234436) do
   end
 
   add_index "comments", ["post_id"], name: "index_comments_on_post_id"
+
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"
