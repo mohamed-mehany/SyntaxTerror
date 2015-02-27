@@ -7,4 +7,20 @@ class ApplicationController < ActionController::Base
   def set_categories
     @categories = Category.order("name")
   end
+  private
+
+    # Overwriting the sign_out redirect path method
+    def after_sign_out_path_for(resource_or_scope)
+      blog_path()
+    end
+    def after_sign_in_path_for(resource_or_scope)
+      if resource.sign_in_count == 1
+        blog_path()
+      else
+        blog_path()
+      end
+    end
+    def after_sign_up_path_for(resource)
+      blog_path()
+    end
 end
