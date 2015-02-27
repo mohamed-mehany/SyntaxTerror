@@ -38,6 +38,7 @@ gem 'thin'
 gem 'rack'
 gem 'railties'
 gem 'rack-timeout'
+gem 'therubyracer'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 group :production do
