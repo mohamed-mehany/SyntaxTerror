@@ -27,7 +27,7 @@ class PostsController < ApplicationController
         render 'new'
       end
     else
-      redirect_to root_path(), notice: "You are not allowed to post."
+      redirect_to blog_path(), notice: "You are not allowed to post."
     end
   end
 

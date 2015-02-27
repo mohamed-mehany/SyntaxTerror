@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :static_pages
+
   resources :posts do
     resources :comments
     get 'page/:page', action: :index, on: :collection
@@ -17,8 +19,11 @@ Rails.application.routes.draw do
       post :set_auth
     end
   end
+  get '/home' => 'static_pages#home'
+  get '/blog' => 'posts#index'
 
-  root 'posts#index'
+  #root 'posts#index'
+  root 'static_pages#home'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
