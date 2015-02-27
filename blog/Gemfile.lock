@@ -213,8 +213,10 @@ DEPENDENCIES
   kaminari
   letter_opener
   pg
+  rack
   rack-timeout
   rails (= 4.2.0)
+  railties
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   social-share-button (~> 0.1.6)
