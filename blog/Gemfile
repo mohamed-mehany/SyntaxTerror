@@ -39,6 +39,7 @@ gem 'rack'
 gem 'railties'
 gem 'rack-timeout'
 gem 'therubyracer'
+gem 'rails_12factor'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 group :production do
