@@ -5,7 +5,7 @@ class UsersController < ApplicationController
    elsif current_user
      redirect_to current_user
    else
-     redirect_to root_path()
+     redirect_to post_path()
    end
   end
   def show
@@ -29,7 +29,7 @@ class UsersController < ApplicationController
       @user.save
       redirect_to users_path()
     else
-      redirect_to root_path(), notice: "You are not allowed to authenticate."
+      redirect_to post_path(), notice: "You are not allowed to authenticate."
     end
   end
   private
