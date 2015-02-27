@@ -29,3 +29,5 @@ test:
 production:
   <<: *default
   database: blog_production
+  user: myapp
+  password: password1
